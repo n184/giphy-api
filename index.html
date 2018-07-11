@@ -2,61 +2,135 @@
 <html>
 
 <head>
-    <title>homework giphy-api</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>giphy-api</title>
+
+
     <style type="text/css">
-    button,
-    div,
-    form,
-    input {
-        margin: 10px;
-    }
 
-    .item {
-        float: left;
-    }
+        @media only screen and (max-width: 2000px) {
+            form {
+                    position: absolute;
+                    top: 10px;
+                    right: 50px;
+                }
 
-    label,
-    input {
-        position: relative;
-    }
+            #button {
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+                    width: 50%;
+                    height: 90px;
+                }
+        }
 
-    form {
-        position: absolute;
-        right: 50px;
-    }
+        @media only screen and (max-width: 768px) {
+            form {
+                    position: absolute;
+                    left: 20px;
+                    top: 20px;
+                }
 
-    .section-left {
-        max-width: 800px;
-    }
+            #button {
+                    position: absolute;
+                    left: 20px;
+                    top: 200px;
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+                    width: 80%;
+                    height: 90px;
+                }
 
-    .section-right {
-        max-width: 200px;
-        float: right;
-    }
+            #gifs-appear-here {
+                    position: absolute;
+                    margin-top: 250px;
+                }
+        }
 
-    button,
-    #submit {
-        background: green;
-        color: white;
-        padding: 10px;
-    }
+        @media only screen and (max-width: 630px) {
+            div #button {
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+                    width: 80%;
+                    height: 90px;
+                }
+
+            .mainSection {
+                    position: absolute;
+                    margin-top: 7%;
+                }
+        }
+
+        button,
+        div,
+        form,
+        input {
+                margin: 7px;
+        }
+
+        .HumReaction {
+                height:60px;
+                width: auto;
+        }
+
+        .item {
+                float: left;
+                padding: 15px;
+                border: solid 2px gray;
+                box-shadow: 10px 10px gray;
+        }
+
+        img {
+                width: 200px;
+                height: 200px;
+        }
+
+        label,
+        input {
+                position: relative;
+        }
+
+        #topSection {
+            margin:50px;
+        }
+
+        .section-left {
+            max-width: 800px;
+        }
+
+        .section-right {
+            max-width: 200px;
+            float: right;
+        }
+
+        button,
+        #submit {
+            background: green;
+            color: white;
+            padding: 10px;
+        }
+
     </style>
 </head>
 
 <body>
-    <div id="button"></div>
-    <div class="container">
-        <div class="section-left">
-            <div id="gifs-appear-here"></div>
+    <div id="topSection">
+         <div class="section-left">
+            <div id="button"></div>
         </div>
         <form class="section-right">
-            <label for="reaction-input">
-                <h3>Add a reaction</h3></label>
-            <input type="text" id="reaction-input">
-            <br>
-            <input id="submit" type="submit" value="Add a reaction">
+                <label for="reaction-input">
+                    <h3>Add a reaction</h3></label>
+                <input type="text" id="reaction-input">
+                <br>
+                <input id="submit" type="submit" value="Add a reaction">
         </form>
     </div>
+
+    <div class="mainSection">
+        <div id="gifs-appear-here"></div>
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
     var topics = ["happy", "high five", "wow"];
